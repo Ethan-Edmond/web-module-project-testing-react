@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import Show from './../Show';
 
 const testShow = {
-    //add in approprate test data structure here.
+  //add in approprate test data structure here.
   name: 'Test Show',
   summary: 'A show about testing',
   seasons: [
