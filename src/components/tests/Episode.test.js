@@ -14,6 +14,8 @@ const testEpisode = {
 
 const testEpisodeWithoutImage = {
     //Add in approprate test data structure here.
+  ...testEpisode,
+  image: null
 }
 
 test("renders without error", () => {
@@ -29,7 +31,10 @@ test("renders the summury test passed as prop", ()=>{
 });
 
 test("renders default image when image is not defined", ()=>{
-  
+  render(<Episode episode={testEpisodeWithoutImage}/>);
+  const defaultImage = screen.getByRole("img");
+  const defalt = screen.getByAltText('./stranger_things.png');
+  expect(defaultImage === defalt).toBeTruthy();
 });
 
 //Tasks
