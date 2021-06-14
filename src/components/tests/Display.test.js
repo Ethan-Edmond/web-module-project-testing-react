@@ -44,7 +44,7 @@ test('Select options match seasons in test data', async () => {
   userEvent.click(button());
 
   const selector = await screen.findAllByTestId('season-option');
-  expect(selector.length).toBe(1);
+  expect(selector.length).toBe(testShow.seasons.length);
 });
 
 //6. Notice the optional functional prop passed in to the Display component client code. Test that when the fetch button is pressed, this function is called.
