@@ -6,9 +6,19 @@ import Show from './../Show';
 
 const testShow = {
     //add in approprate test data structure here.
-}
+  name: 'Test Show',
+  summary: 'A show about testing',
+  seasons: [
+    {
+      id: 1,
+      name: 'Season 1',
+      episodes: []
+    }
+  ]
+};
 
 test('renders testShow and no selected Season without errors', ()=>{
+  render(<Show show={testShow} selectedSeason={'none'}/>);
 });
 
 test('renders Loading component when prop show is null', () => {
