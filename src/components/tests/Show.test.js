@@ -44,8 +44,9 @@ test('handleSelect is called when an season is selected', () => {
 });
 
 test('component renders when no seasons are selected and when rerenders with a season passed in', () => {
+  const { rerender } = render(<Show show={testShow} selectedSeason={'none'}/>);
+  const episode = () => screen.queryByTestId('episodes-container');
+  expect(episode()).not.toBeInTheDocument();
+  rerender(<Show show={testShow} selectedSeason={0}/>);
+  expect(episode()).toBeInTheDocument();
 });
-
-//Tasks:
-//5. Test that when an item is selected, the handleSelect function is called. Look at your code to see how to get access to the select Dom element and userEvent reference materials to see how to trigger a selection.
-//6. Test that the episode component DOES NOT render when the selectedSeason props is "none" and DOES render the episode component when the selectedSeason prop has a valid season index.
